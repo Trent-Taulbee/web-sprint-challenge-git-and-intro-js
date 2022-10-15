@@ -309,13 +309,14 @@ Use lotsOfArt to do the following:
 */
 
 function lotsOfArt(array) {
-  let hundPaints = [];
+  const hundPaints = [];
   for (let i = 0; i < array.length; i++) {
-  if (array.paintings >= 100);
-    hundPaints.push(array.name);
-  
- return hundPaints;
+  if (array[i].paintings > 99){
+    hundPaints.push(array[i].name);
+  }
+ 
   };
+  return hundPaints;
 }
 console.log(lotsOfArt(artists))
 
