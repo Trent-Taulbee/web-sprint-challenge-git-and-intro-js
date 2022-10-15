@@ -266,14 +266,13 @@ Use removeArtist to do the following:
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
 function removeArtist(array, number){
-  const removedArtist = [];
-  {array.splice(number, 1);
-  removedArtist.push(array)
+  const removedArtist = [...array];
+  {removedArtist.splice([number],1)
   }
 
 return removedArtist;
 }
-console.log(removeArtist(artists, [19]))
+console.log(removeArtist(artists, 19))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -293,12 +292,13 @@ Use addArtist to do the following:
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array, name, years, genre, nationality, bio ) {
-  const addMe = []
-  addMe.push(name, years, genre, nationality, bio)
+  
+  let addMe = {name, years, genre, nationality, bio};
+  array.push(addMe);
 
-return addMe
+return array
 }
-console.log(addArtist(artists,"name: Trent Taulbee", `years: 1994 - 2022`, `genre: Web Design`, `nationality: American`, `bio: lorem ipsum`))
+console.log(addArtist(artists,`name: Trent Taulbee`, `years: 1994 - 2022`, `genre: Web Design`, `nationality: American`, `bio: lorem ipsum`))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -308,10 +308,16 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array) {
+  let hundPaints = [];
+  for (let i = 0; i < array.length; i++) {
+  if (array.paintings >= 100);
+    hundPaints.push(array.name);
+  
+ return hundPaints;
+  };
 }
-
+console.log(lotsOfArt(artists))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
